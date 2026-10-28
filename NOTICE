@@ -1,0 +1,10 @@
+e2e
+Copyright 2026 TesterArmy, Inc.
+
+This product includes software developed at TesterArmy, Inc.
+(https://tester.army).
+
+This example adapts examples/with-limrun, examples/with-swiftui, and
+examples/with-compose from https://github.com/tester-army/e2e.
+Limrun maintains the standalone packaging, build commands, and documentation.
+The bundled fonts retain their licenses in each app directory.

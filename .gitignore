@@ -1,0 +1,8 @@
+node_modules/
+build/
+.e2e/
+.lim/
+.env
+.env.*
+!.env.example
+.DS_Store

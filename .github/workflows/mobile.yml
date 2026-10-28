@@ -1,0 +1,43 @@
+name: Mobile tests
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mobile-tests
+  cancel-in-progress: false
+
+jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      LIMRUN_API_KEY: ${{ secrets.LIMRUN_API_KEY }}
+      LIM_API_KEY: ${{ secrets.LIMRUN_API_KEY }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+      - name: Check credentials and Android tools
+        run: |
+          test -n "$LIMRUN_API_KEY" || { echo 'Set the LIMRUN_API_KEY repository secret.'; exit 1; }
+          echo "$ANDROID_HOME/platform-tools" >> "$GITHUB_PATH"
+          "$ANDROID_HOME/platform-tools/adb" version
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm test -- --video
+      - name: Save reports and recordings
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: mobile-test-results
+          path: .e2e/
+          include-hidden-files: true
+          if-no-files-found: ignore
+          retention-days: 7
