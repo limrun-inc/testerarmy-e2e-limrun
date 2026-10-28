@@ -7,8 +7,8 @@
     "node": "^22.22.3 || >=24.8.0"
   },
   "scripts": {
-    "build:ios": "lim xcode build apps/ios --scheme HelloApp --inactivity-timeout 1m --upload e2e-limrun-ios.tar.gz --upload-ttl 24h && lim assets pull e2e-limrun-ios.tar.gz --output build && tar -xzf build/e2e-limrun-ios.tar.gz -C build",
-    "build:android": "lim gradle build apps/android --inactivity-timeout 1m --upload e2e-limrun-android.apk --upload-ttl 24h && lim assets pull e2e-limrun-android.apk --output build",
+    "build:ios": "node scripts/lim.mjs xcode build apps/ios --scheme HelloApp --inactivity-timeout 1m --upload e2e-limrun-ios.tar.gz --upload-ttl 24h && node scripts/lim.mjs assets pull e2e-limrun-ios.tar.gz --output build && tar -xzf build/e2e-limrun-ios.tar.gz -C build",
+    "build:android": "node scripts/lim.mjs gradle build apps/android --inactivity-timeout 1m --upload e2e-limrun-android.apk --upload-ttl 24h && node scripts/lim.mjs assets pull e2e-limrun-android.apk --output build",
     "build": "npm run build:ios && npm run build:android",
     "test": "e2e run",
     "typecheck": "tsc --noEmit"

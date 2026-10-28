@@ -30,10 +30,9 @@ Gradle, simulator, or emulator. The tests use locators and need no AI key.
 
    ```sh
    export LIMRUN_API_KEY='your-limrun-api-key'
-   export LIM_API_KEY="$LIMRUN_API_KEY"
    ```
 
-   The test provider reads `LIMRUN_API_KEY`; the build CLI reads `LIM_API_KEY`.
+   The build scripts and test provider use this same key.
 
 3. Build both apps on Limrun and download them into `build/`:
 
@@ -97,9 +96,7 @@ test('greets the entered name', async ({ app, screen }) => {
 
 The suite captures the successful greeting on both hosted devices:
 
-| iOS | Android |
-| --- | --- |
-| ![SwiftUI greeting form showing Hello, Ada!](screenshots/ios.png) | ![Jetpack Compose greeting form showing Hello, Ada!](screenshots/android.png) |
+![iOS on the left and Android on the right, both showing Hello, Ada!](screenshots/greetings.png)
 
 ## Test your own app
 
