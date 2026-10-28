@@ -132,6 +132,10 @@ Last checked on October 28, 2026 with e2e 0.21.3, mobile 0.12.4,
 the Limrun provider 0.2.2, Limrun SDK 0.66.0, and Limrun CLI 0.48.0.
 All ten tests passed on hosted iOS and Android devices with video recording.
 
+The npm overrides select patched [Undici](https://github.com/nodejs/undici/security/advisories/GHSA-2m5v-pch6-74hx)
+and [Zod](https://github.com/advisories/GHSA-mrhx-c7xc-m3w5) releases while
+the upstream packages pin older versions.
+
 Limrun maintains this example. [Open an issue](https://github.com/limrun-inc/e2e-limrun/issues)
 for a broken setup or test. Before submitting a change, run
 `npm run typecheck` and the affected platform's suite.
