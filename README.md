@@ -21,8 +21,8 @@ Gradle, simulator, or emulator. The tests use locators and need no AI key.
 1. Clone the example and install its pinned dependencies:
 
    ```sh
-   git clone https://github.com/limrun-inc/e2e-limrun.git
-   cd e2e-limrun
+   git clone https://github.com/limrun-inc/testerarmy-e2e-limrun.git
+   cd testerarmy-e2e-limrun
    npm ci
    ```
 
@@ -136,7 +136,7 @@ The npm overrides select patched [Undici](https://github.com/nodejs/undici/secur
 and [Zod](https://github.com/advisories/GHSA-mrhx-c7xc-m3w5) releases while
 the upstream packages pin older versions.
 
-Limrun maintains this example. [Open an issue](https://github.com/limrun-inc/e2e-limrun/issues)
+Limrun maintains this example. [Open an issue](https://github.com/limrun-inc/testerarmy-e2e-limrun/issues)
 for a broken setup or test. Before submitting a change, run
 `npm run typecheck` and the affected platform's suite.
 
