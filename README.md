@@ -1,6 +1,6 @@
 # Test iOS and Android apps with e2e and Limrun
 
-Run the same five [e2e](https://e2e.tester.army) tests on a hosted iOS
+Run the same five [e2e](https://e2e.com) tests on a hosted iOS
 simulator and Android emulator with [Limrun](https://limrun.com). This
 repository includes a SwiftUI app, a Jetpack Compose app, and their shared
 test suite. Limrun builds both apps remotely, so you need no local Xcode,
@@ -110,7 +110,7 @@ accessible names that both platforms expose. The sample submits by tapping
 the button, so it does not depend on keyboard Enter support. Restarting
 preserves persisted app data; these sample apps store the form in memory.
 
-See the [e2e Limrun integration guide](https://e2e.tester.army/docs/integrations/limrun)
+See the [e2e Limrun integration guide](https://e2e.com/docs/integrations/limrun)
 for provider options and the [Limrun documentation](https://docs.limrun.com)
 for remote builds.
 
@@ -138,6 +138,6 @@ for a broken setup or test. Before submitting a change, run
 `npm run typecheck` and the affected platform's suite.
 
 The apps and tests are adapted from
-[TesterArmy's examples](https://github.com/tester-army/e2e/tree/main/examples).
+[the e2e examples](https://github.com/tester-army/e2e/tree/main/examples).
 Code is licensed under [Apache-2.0](LICENSE); see [NOTICE](NOTICE) for
 attribution and the bundled font directories for their licenses.
